@@ -5,64 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISSI | Tienda de Ropa</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Iconos para el carrito y borrar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de navegación superior -->
     <header>
         <div class="logo">ISSI</div>
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Colección</a></li>
-                <li><a href="#">Ofertas</a></li>
             </ul>
         </nav>
-        <div class="carrito">
-            🛒 Carrito (<span id="contador-carrito">0</span>)
+        <!-- Botón que abrirá el carrito -->
+        <div class="icono-carrito" id="abrir-carrito">
+            <i class="fas fa-shopping-cart"></i> (<span id="contador-carrito">0</span>)
         </div>
     </header>
 
+    <!-- Panel del Carrito (Oculto por defecto) -->
+    <aside class="carrito-panel" id="carrito-panel">
+        <div class="carrito-header">
+            <h2>Tu Compra</h2>
+            <button id="cerrar-carrito"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <!-- Aquí se inyectarán los productos desde JavaScript -->
+        <div class="carrito-items" id="carrito-items">
+            <!-- Ejemplo de cómo se verá un ítem (se genera en JS) -->
+            <!--
+            <div class="item">
+                <p>Chaqueta de Cuero</p>
+                <span>$120.000</span>
+                <button><i class="fas fa-trash"></i></button>
+            </div>
+            -->
+        </div>
+
+        <div class="carrito-footer">
+            <h3>Total: $<span id="total-precio">0</span></h3>
+            <button class="btn-pagar">Proceder al Pago</button>
+        </div>
+    </aside>
+
+    <!-- Fondo oscuro cuando el carrito está abierto -->
+    <div class="overlay" id="overlay"></div>
+
     <main>
-        <!-- Banner principal -->
         <section class="hero">
             <h1>Nueva Colección Urbana</h1>
             <p>Descubre los estilos que marcan tendencia esta temporada.</p>
         </section>
 
-        <!-- Catálogo de ropa -->
         <section class="productos">
             <h2>Nuestras Prendas</h2>
             <div class="grid-productos">
-                
-                <div class="tarjeta-producto">
+                <!-- Producto 1 -->
+                <div class="tarjeta-producto" data-id="1" data-nombre="Chaqueta de Cuero" data-precio="120000">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" alt="Chaqueta">
                     <h3>Chaqueta de Cuero</h3>
                     <p class="precio">$120.000</p>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
-                
-                <div class="tarjeta-producto">
+                <!-- Producto 2 -->
+                <div class="tarjeta-producto" data-id="2" data-nombre="Camiseta Básica Blanca" data-precio="45000">
                     <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400" alt="Camiseta">
                     <h3>Camiseta Básica Blanca</h3>
                     <p class="precio">$45.000</p>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
-                
-                <div class="tarjeta-producto">
+                <!-- Producto 3 -->
+                <div class="tarjeta-producto" data-id="3" data-nombre="Pantalón Cargo Dark" data-precio="95000">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" alt="Pantalón">
                     <h3>Pantalón Cargo Dark</h3>
                     <p class="precio">$95.000</p>
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
-
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 ISSI. Todos los derechos reservados.</p>
-    </footer>
-
     <script src="app.js"></script>
 </body>
-</html>s
+</html>
