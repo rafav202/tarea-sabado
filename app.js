@@ -1,10 +1,9 @@
-// Inicializamos EmailJS al cargar el archivo
-emailjs.init("EGydEeLzJ0xWQib6Q");
-
-const SERVICE_ID = "service_cc7scnd";
-const TEMPLATE_ID = "template_r3qtmol";
-
 document.addEventListener('DOMContentLoaded', () => {
+    // === CONFIGURACIÓN DE EMAILJS (Llena esto en el Paso 4) ===
+    emailjs.init("TU_PUBLIC_KEY"); // Pon tu Public Key aquí
+    const SERVICE_ID = "service_cc7scnd"; // Pon tu Service ID aquí
+    const TEMPLATE_ID = "template_r3qtmol"; // Pon tu Template ID aquí
+
     const carrito = [];
     let totalCompra = 0;
 
@@ -93,14 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Procesar el pago y enviar correos
     formPago.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita que la página se recargue
         const btnConfirmar = document.querySelector('.btn-confirmar');
         btnConfirmar.textContent = "Procesando pago y enviando correos...";
         btnConfirmar.disabled = true;
 
+        // Crear una lista de texto con los productos para el correo
         let detalleCompra = "";
         carrito.forEach(p => detalleCompra += `- ${p.nombre} ($${p.precio.toLocaleString('es-CO')})\n`);
 
+        // Datos que se enviarán a EmailJS
         const datosCorreo = {
             nombre_cliente: document.getElementById('nombre').value,
             correo_cliente: document.getElementById('correo').value,
@@ -109,9 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
             total_pagado: totalCompra.toLocaleString('es-CO')
         };
 
+        // Enviar usando EmailJS
         emailjs.send(SERVICE_ID, TEMPLATE_ID, datosCorreo)
             .then(() => {
-                alert('¡Compra exitosa! Revisa tu correo para ver el recibo.');
+                alert('¡Compra exitosa! Revisa tu correo (y el del dueño) para ver el recibo.');
+                // Reiniciar todo
                 carrito.length = 0;
                 actualizarCarritoHTML();
                 formPago.reset();
