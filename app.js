@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // === CONFIGURACIÓN DE EMAILJS (Llena esto en el Paso 4) ===
-    emailjs.init("TU_PUBLIC_KEY"); // Pon tu Public Key aquí
+    emailjs.init("EGydEeLzJ0xWQIb6Q"); // Pon tu Public Key aquí
     const SERVICE_ID = "service_cc7scnd"; // Pon tu Service ID aquí
     const TEMPLATE_ID = "template_r3qtmol"; // Pon tu Template ID aquí
 
