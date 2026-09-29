@@ -61,7 +61,7 @@
             <h2>Nuestras Prendas</h2>
             <div class="grid-productos">
                 <!-- Producto 1 -->
-                <div class="tarjeta-producto" data-id="1" data-nombre="Chaqueta de Cuero" data-precio="120000">
+                <div class="tarjeta-producto" data-id="1" data-nombre="Pantalón Cargo Dark" data-precio="120000">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" alt="Chaqueta">
                     <h3>Chaqueta de Cuero</h3>
                     <p class="precio">$120.000</p>
@@ -75,7 +75,7 @@
                     <button class="btn-agregar">Añadir al carrito</button>
                 </div>
                 <!-- Producto 3 -->
-                <div class="tarjeta-producto" data-id="3" data-nombre="Pantalón Cargo Dark" data-precio="95000">
+                <div class="tarjeta-producto" data-id="3" data-nombre=" Chaqueta de Cuero" data-precio="95000">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" alt="Pantalón">
                     <h3>Pantalón Cargo Dark</h3>
                     <p class="precio">$95.000</p>
@@ -86,5 +86,34 @@
     </main>
 
     <script src="app.js"></script>
+    <!-- Ventana de Pago (Modal) -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-contenido">
+            <h2>Finalizar Compra</h2>
+            <form id="form-pago">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+                <input type="text" id="direccion" placeholder="Dirección de envío" required>
+                
+                <div class="tarjeta-simulada">
+                    <p>💳 Datos de Tarjeta</p>
+                    <input type="text" placeholder="Número de tarjeta" required maxlength="16">
+                    <div class="tarjeta-detalles">
+                        <input type="text" placeholder="MM/AA" required maxlength="5">
+                        <input type="text" placeholder="CVC" required maxlength="3">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-confirmar">Pagar $<span id="modal-total">0</span></button>
+                <button type="button" id="cerrar-checkout" class="btn-cancelar">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Librería para enviar correos desde JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
 </body>
 </html>

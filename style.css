@@ -123,3 +123,42 @@ nav a:hover { color: #d4af37; }
     opacity: 0; visibility: hidden; transition: 0.3s;
 }
 .overlay.activo { opacity: 1; visibility: visible; }
+/* --- VENTANA DE PAGO (MODAL) --- */
+.checkout-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; transition: 0.3s;
+}
+
+.checkout-modal.activo { opacity: 1; visibility: visible; }
+
+.checkout-contenido {
+    background: white; padding: 2rem; border-radius: 8px;
+    width: 90%; max-width: 450px; text-align: center;
+}
+
+.checkout-contenido h2 { margin-bottom: 20px; color: #111; }
+
+#form-pago input {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;
+}
+
+.tarjeta-simulada {
+    background: #f8f8f8; padding: 15px; border-radius: 4px; margin-bottom: 20px;
+    border: 1px solid #eee; text-align: left;
+}
+.tarjeta-simulada p { margin-bottom: 10px; font-weight: bold; color: #555; }
+.tarjeta-detalles { display: flex; gap: 10px; }
+
+.btn-confirmar {
+    width: 100%; padding: 15px; background: #28a745; color: white;
+    border: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; border-radius: 4px;
+}
+.btn-confirmar:hover { background: #218838; }
+
+.btn-cancelar {
+    width: 100%; padding: 10px; background: transparent; color: #ff4d4d;
+    border: none; margin-top: 10px; cursor: pointer; font-weight: bold;
+}
