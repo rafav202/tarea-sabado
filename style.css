@@ -1,33 +1,120 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #eef2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Reseteo básico para que se vea igual en todos los navegadores */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.card {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+header {
+    background-color: #111111;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37; /* Tono dorado elegante */
+}
+
+.hero {
+    background-color: #f8f8f8;
     text-align: center;
-    max-width: 400px;
+    padding: 5rem 2rem;
+    border-bottom: 1px solid #eeeeee;
 }
 
-button {
-    background-color: #007bff;
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+.productos {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.grid-productos {
+    display: grid;
+    /* Esto hace que las columnas se adapten solas al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.tarjeta-producto {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.precio {
+    font-weight: bold;
+    color: #d4af37;
+    margin: 15px 0;
+    font-size: 1.3rem;
+}
+
+.btn-agregar {
+    background-color: #111111;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 15px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+.btn-agregar:hover {
+    background-color: #d4af37;
+    color: #111111;
+}
+
+footer {
+    background-color: #111111;
+    color: #888888;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
 }

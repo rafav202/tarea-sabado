@@ -3,18 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea Sábado - Colaborativo</title>
-    <!-- Conexión del CSS -->
+    <title>ISSI | Tienda de Ropa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="card">
-        <h1>Proyecto Tarea Sábado</h1>
-        <p>Simulación de trabajo colaborativo usando ramas en Git.</p>
-        <button id="btn-mensaje">Haz clic aquí</button>
+    <!-- Barra de navegación superior -->
+    <header>
+        <div class="logo">ISSI</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Colección</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </nav>
+        <div class="carrito">
+            🛒 Carrito (<span id="contador-carrito">0</span>)
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner principal -->
+        <section class="hero">
+            <h1>Nueva Colección Urbana</h1>
+            <p>Descubre los estilos que marcan tendencia esta temporada.</p>
+        </section>
+
+        <!-- Catálogo de ropa -->
+        <section class="productos">
+            <h2>Nuestras Prendas</h2>
+            <div class="grid-productos">
+                
+                <div class="tarjeta-producto">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" alt="Chaqueta">
+                    <h3>Chaqueta de Cuero</h3>
+                    <p class="precio">$120.000</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                
+                <div class="tarjeta-producto">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400" alt="Camiseta">
+                    <h3>Camiseta Básica Blanca</h3>
+                    <p class="precio">$45.000</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                
+                <div class="tarjeta-producto">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" alt="Pantalón">
+                    <h3>Pantalón Cargo Dark</h3>
+                    <p class="precio">$95.000</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+
+            </div>
+        </section>
     </main>
 
-    <!-- Conexión del JS -->
+    <footer>
+        <p>&copy; 2026 ISSI. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="app.js"></script>
 </body>
-</html>
+</html>s
